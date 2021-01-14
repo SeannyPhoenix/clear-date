@@ -8,7 +8,7 @@ const msPerUnit = 86400000;
  *
  * @return {number} The current date in Clear Date
  */
-function now(): number {
+export function now(): number {
   const now = Date.now();
   return toClearDate(now);
 }
@@ -18,7 +18,7 @@ function now(): number {
  * @param {number} msSinceEpoch
  * @return {number} clearDate
  */
-function toClearDate(msSinceEpoch: number): number {
+export function toClearDate(msSinceEpoch: number): number {
   const msSinceZero = msSinceEpoch - zeroUTC;
   const clearDate = msSinceZero/msPerUnit;
   return clearDate;
@@ -29,7 +29,7 @@ function toClearDate(msSinceEpoch: number): number {
  * @param {number} clearDate
  * @return {number} msSinceEpoch
  */
-function toUnixDate(clearDate: number): number {
+export function toUnixDate(clearDate: number): number {
   const msSinceZero = clearDate * msPerUnit;
   const msSinceEpoch = msSinceZero + zeroUTC;
   return msSinceEpoch;
@@ -44,9 +44,3 @@ function toUnixDate(clearDate: number): number {
 // function roundDate(time: number): number {
 //   return Math.floor(time*1000000)/1000000;
 // }
-
-module.exports = {
-  now,
-  toClearDate,
-  toUnixDate,
-};
