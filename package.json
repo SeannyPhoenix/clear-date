@@ -1,6 +1,6 @@
 {
   "name": "@seannyphoenix/clear-date",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Clear Date is a decimal date system, with the day as the base unit. Clear Date starts at midnight, January 1, 2021 UTC.",
   "main": "build/index.js",
   "scripts": {
