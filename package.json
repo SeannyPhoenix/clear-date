@@ -28,5 +28,13 @@
   },
   "files": [
     "build/**/*"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeannyPhoenix/clear-date.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SeannyPhoenix/clear-date/issues"
+  },
+  "homepage": "https://github.com/SeannyPhoenix/clear-date#readme"
 }
