@@ -45,3 +45,8 @@ exports.toUnixDate = toUnixDate;
 // function roundDate(time: number): number {
 //   return Math.floor(time*1000000)/1000000;
 // }
+exports.default = {
+    now,
+    toClearDate,
+    toUnixDate,
+};
