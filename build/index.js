@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toUnixDate = exports.toClearDate = exports.now = void 0;
+exports.format = exports.toUnixDate = exports.toClearDate = exports.now = void 0;
+// 0000hrs, 1 January, 2021, UTC
 const zeroTime = '2021-01-01T00:00:00.000Z';
+// miliseconds since the epoch
 const zeroUTC = new Date(zeroTime).getTime();
-// ms in a day
+// miliseconds in a day
 const msPerUnit = 86400000;
 /**
  *
@@ -39,14 +41,22 @@ exports.toUnixDate = toUnixDate;
 /**
  *
  * @param {numner} time
- * @return {number} roundedTime
- * for future use
+ * @return {string} formatted time "xxx0.000 00"
  */
-// function roundDate(time: number): number {
-//   return Math.floor(time*1000000)/1000000;
-// }
+function format(time) {
+    const stringify = `${Math.floor(time * 100000)}`;
+    // const length = stringify.length;
+    const formatted = stringify.slice(0, stringify.length - 5) +
+        '.' +
+        stringify.slice(stringify.length - 5, stringify.length - 2) +
+        ' ' +
+        stringify.slice(stringify.length - 2);
+    return formatted;
+}
+exports.format = format;
 exports.default = {
     now,
     toClearDate,
     toUnixDate,
+    format,
 };
